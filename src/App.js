@@ -7,7 +7,7 @@ import TaskList from './components/TaskList';
 const getInitialState = () => ({
 	inputData: { },
 	tasks: [],
-
+	isEdit: false,
 });
 
 const App = (context) => {

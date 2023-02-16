@@ -1,17 +1,19 @@
+import { peek } from '@laufire/utils/debug';
 import { Button } from '@mui/material';
 import React from 'react';
 import todoManager from '../services/todoManager';
 
 const AddButton = (context) => {
-	const { setState, state: { tasks }} = context;
+	const { setState, state: { tasks, isEdit }} = context;
 
 	return <div>
 		<Button
+			disabled={ peek(!todoManager.isItemThere(context)) }
 			onClick={ () => setState((state) => ({
 				...state,
-				tasks: [...tasks, todoManager.addId(context)],
+				tasks: todoManager.addAndEditData(context),
 			})) }
-		>Add</Button></div>;
+		>{isEdit ? 'Edit' : 'Add'}</Button></div>;
 };
 
 export default AddButton;

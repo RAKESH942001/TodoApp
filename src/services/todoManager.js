@@ -1,11 +1,12 @@
 import { rndString } from '@laufire/utils/random';
 
-const addId = (context) => {
-	const { config: { idLength }, state: { inputData }} = context;
+const addAndEditData = (context) => {
+	const { config: { idLength },
+		state: { inputData, isEdit, tasks }} = context;
 
-	return {
-		...inputData, id: rndString(idLength),
-	};
+	return isEdit
+		? tasks.map((task) => (task.id === inputData.id ? inputData : task))
+		: [...tasks, {	...inputData, id: rndString(idLength) }];
 };
 
 const removeData = (context) => {
@@ -22,10 +23,13 @@ const editData = (context) => {
 	return { ...selectedData };
 };
 
+const isItemThere = ({ state: { inputData: { name }}}) => name;
+
 const todoManager = {
-	addId,
+	addAndEditData,
 	removeData,
 	editData,
+	isItemThere,
 };
 
 export default todoManager;
