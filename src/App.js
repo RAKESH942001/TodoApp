@@ -1,11 +1,12 @@
+import { peek } from '@laufire/utils/debug';
 import { React, useState } from 'react';
 import './App.scss';
-import AddButton from './components/AddButton';
+import Buttons from './components/Buttons';
 import InputData from './components/InputData';
 import TaskList from './components/TaskList';
 
 const getInitialState = () => ({
-	inputData: { },
+	inputData: { name: '' },
 	tasks: [],
 	isEdit: false,
 });
@@ -14,9 +15,11 @@ const App = (context) => {
 	const [state, setState] = useState(getInitialState(context));
 	const extendedContext = { ...context, state, setState };
 
+	peek(extendedContext.state);
+
 	return <div className="App">
 		<InputData { ...extendedContext }/>
-		<AddButton { ...extendedContext }/>
+		<Buttons { ...extendedContext }/>
 		<TaskList { ...extendedContext }/>
 	</div>;
 };

@@ -1,20 +1,20 @@
+import { Box, TextField } from '@mui/material';
 import React from 'react';
 
 const InputData = (context) => {
 	const { setState, state: { inputData }} = context;
 
-	return <div className="inputData">
-		<label>Enter</label>
-		<input
-			type="text"
+	return <Box className="inputData">
+		<TextField
+			variant="outlined"
 			value={ inputData.name }
-			placeholder="value"
+			placeholder="To-Do :)"
 			onChange={ ({ target: { value }}) => setState((state) => ({
 				...state,
 				inputData: { ...inputData, name: value },
 			})) }
 		/>
-	</div>;
+	</Box>;
 };
 
 export default InputData;
