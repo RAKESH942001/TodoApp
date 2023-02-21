@@ -6,8 +6,8 @@ import InputData from './components/InputData';
 import TaskList from './components/TaskList';
 
 const getInitialState = () => ({
-	inputData: { name: '' },
-	tasks: [],
+	todo: { name: '' },
+	todos: [],
 	isEdit: false,
 });
 

@@ -10,7 +10,7 @@ const DeleteButton = (context) => {
 			className="deleteButton"
 			onClick={ () => setState((state) => ({
 				...state,
-				tasks: todoManager.removeData(context),
+				todos: todoManager.removeData(context),
 			})) }
 			variant="contained"
 			color="error"

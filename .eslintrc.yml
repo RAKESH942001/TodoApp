@@ -123,7 +123,7 @@ rules:
     - beforeLineComment: false
       afterLineComment: false
       applyDefaultIgnorePatterns: true
-      ignorePattern: Helpers|Tasks|Exports|Tested|Mocks
+      ignorePattern: Helpers|todos|Exports|Tested|Mocks
   lines-between-class-members:
     - error
     - always

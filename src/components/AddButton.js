@@ -10,8 +10,8 @@ const AddButton = (context) => {
 			disabled={ !todoManager.isItemThere(context) }
 			onClick={ () => setState((state) => ({
 				...state,
-				tasks: todoManager.addFields(context),
-				inputData: { name: todoManager.resetInput() },
+				todos: todoManager.addFields(context),
+				todo: { name: todoManager.resetInput() },
 			})) }
 		>Add</Button></Box>;
 };

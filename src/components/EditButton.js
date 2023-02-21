@@ -10,8 +10,8 @@ const EditButton = (context) => {
 			className="editButton"
 			onClick={ () => setState((state) => ({
 				...state,
-				tasks: todoManager.editFields(context),
-				inputData: { name: todoManager.resetInput() },
+				todos: todoManager.editFields(context),
+				todo: { name: todoManager.resetInput() },
 				isEdit: todoManager.toggleEdit(context),
 			})) }
 		>Edit</Button>
