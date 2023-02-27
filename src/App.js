@@ -22,7 +22,6 @@ const App = (context) => {
 		<Buttons { ...extendedContext }/>
 		<TaskList { ...extendedContext }/>
 		<ClearAllButton { ...extendedContext }/>
-
 	</div>;
 };
 
