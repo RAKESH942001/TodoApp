@@ -1,8 +1,7 @@
-/* eslint-disable max-lines-per-function */
-import { peek } from '@laufire/utils/debug';
-import { Box, Checkbox } from '@mui/material';
+import { Box } from '@mui/material';
 import React from 'react';
 import DeleteButton from './DeleteButton';
+import CheckBox from './CheckBox';
 
 const TaskList = (context) => {
 	const { state: { todos, isEdit }, setState } = context;
@@ -13,15 +12,15 @@ const TaskList = (context) => {
 			sx={ { display: 'flex',
 				justifyContent: 'center' } }
 		>
-			<Checkbox/>
+			<CheckBox { ...{ ...context, data: todo } }/>
 			<Box
 				sx={ { flexBasis: '300px' } }
 				onClick={ () => setState((state) => ({
 					...state,
 					isEdit: !isEdit,
-					todo: peek(todo),
+					todo: todo,
 				})) }
-			>{todo.name }</Box>
+			>{todo.name}</Box>
 			<DeleteButton { ...{ ...context, data: todo } }/>
 		</Box>);
 };

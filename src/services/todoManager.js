@@ -4,7 +4,8 @@ const addFields = (context) => {
 	const { config: { idLength },
 		state: { todo, todos }} = context;
 
-	return [...todos, {	...todo, id: rndString(idLength) }];
+	return [...todos, {	...todo,
+		id: rndString(idLength), checked: false }];
 };
 
 const editFields = (context) => {
@@ -28,8 +29,23 @@ const toggleEdit = (context) => {
 	return !isEdit;
 };
 
+const getCheckedOrNot = (context) => {
+	const { state: { todos }, data } = context;
+
+	return	todos.map((todoList) => (todoList.id === data.id
+		? { ...todoList, checked: !todoList.checked }
+		: todoList));
+};
+
+const removeClearedTask = (context) => {
+	const { state: { todos }} = context;
+
+	return todos.filter((todoList) => todoList.checked === false);
+};
 const todoManager = {
 	addFields,
+	getCheckedOrNot,
+	removeClearedTask,
 	editFields,
 	removeData,
 	isItemThere,
