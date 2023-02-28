@@ -49,8 +49,28 @@ const getSelectedTodo = (context) => {
 	return todos.map((todoList) => ({ ...todoList, checked: true }));
 };
 
+const getFilteredTask = {
+	active: (context) => getActiveList(context),
+	all: ({ state: { todos }}) => todos,
+	completed: (context) => getCompletedTask(context),
+};
+
+const getActiveList = (context) => {
+	const { state: { todos }} = context;
+
+	return todos.filter((todo) => todo.checked === false);
+};
+const getCompletedTask = (context) => {
+	const { state: { todos }} = context;
+
+	return todos.filter((todo) => todo.checked === true);
+};
+
 const todoManager = {
 	addFields,
+	getFilteredTask,
+	getCompletedTask,
+	getActiveList,
 	getSelectedTodo,
 	getCheckedOrNot,
 	removeClearedTask,

@@ -1,14 +1,13 @@
+import { Box } from '@mui/material';
+import React from 'react';
+import ActiveList from './Active';
+import AllButton from './AllButton';
+import CompletedTask from './Completed';
 
-import { React } from 'react';
-import AddButton from './AddButton';
-import EditButton from './EditButton';
-
-const Buttons = (context) => {
-	const { state: { isEdit }} = context;
-
-	return 	isEdit
-		? <EditButton { ...context }/>
-		: <AddButton { ...context }/>;
-};
+const Buttons = (context) =>
+	<Box>
+		<AllButton { ...context }/>
+		<ActiveList { ...context }/>
+		<CompletedTask { ...context }/></Box>;
 
 export default Buttons;

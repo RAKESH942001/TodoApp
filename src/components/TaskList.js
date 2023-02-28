@@ -2,11 +2,12 @@ import { Box } from '@mui/material';
 import React from 'react';
 import DeleteButton from './DeleteButton';
 import CheckBox from './CheckBox';
+import todoManager from '../services/todoManager';
 
 const TaskList = (context) => {
-	const { state: { todos, isEdit }, setState } = context;
+	const { state: { filter, isEdit }, setState } = context;
 
-	return todos.map((todo, key) =>
+	return todoManager.getFilteredTask[filter](context).map((todo, key) =>
 		<Box
 			key={ key }
 			sx={ { display: 'flex',
