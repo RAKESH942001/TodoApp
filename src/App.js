@@ -5,7 +5,7 @@ import AddOrEditButton from './components/AddOrEditButton';
 import ClearAllButton from './components/ClearAll';
 import InputData from './components/InputData';
 import TaskList from './components/TaskList';
-import Buttons from './components/Buttons';
+import FilterButtons from './components/FilterButtons';
 
 const getInitialState = () => ({
 	todo: { name: '' },
@@ -23,7 +23,7 @@ const App = (context) => {
 	return <div className="App">
 		<InputData { ...extendedContext }/>
 		<AddOrEditButton { ...extendedContext }/>
-		<Buttons { ...extendedContext }/>
+		<FilterButtons { ...extendedContext }/>
 		<TaskList { ...extendedContext }/>
 		<ClearAllButton { ...extendedContext }/>
 	</div>;

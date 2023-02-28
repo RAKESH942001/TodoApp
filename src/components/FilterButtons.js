@@ -1,7 +1,7 @@
 import { Box, Button } from '@mui/material';
 import React from 'react';
 
-const Buttons = (context) => {
+const FilterButtons = (context) => {
 	const { setState, config: { filterData }} = context;
 
 	return (
@@ -16,4 +16,4 @@ const Buttons = (context) => {
 			</Box>));
 };
 
-export default Buttons;
+export default FilterButtons;
