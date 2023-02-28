@@ -1,13 +1,19 @@
-import { Box } from '@mui/material';
+import { Box, Button } from '@mui/material';
 import React from 'react';
-import ActiveList from './Active';
-import AllButton from './AllButton';
-import CompletedTask from './Completed';
 
-const Buttons = (context) =>
-	<Box>
-		<AllButton { ...context }/>
-		<ActiveList { ...context }/>
-		<CompletedTask { ...context }/></Box>;
+const Buttons = (context) => {
+	const { setState, config: { filterData }} = context;
+
+	return (
+		filterData.map((data, key) =>
+			<Box key={ key }>
+				<Button
+					onClick={ () => setState((state) => ({
+						...state,
+						filter: data,
+					})) }
+				>{data}</Button>
+			</Box>));
+};
 
 export default Buttons;
