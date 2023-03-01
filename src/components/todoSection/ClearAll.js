@@ -1,7 +1,7 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 import React from 'react';
 import { Button } from '@mui/material';
-import todoManager from '../services/todoManager';
+import todoManager from '../../services/todoManager';
 
 const ClearAllButton = (context) => {
 	const { setState } = context;

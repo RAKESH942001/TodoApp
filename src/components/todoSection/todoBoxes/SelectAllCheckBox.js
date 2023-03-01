@@ -1,6 +1,6 @@
 import { Checkbox } from '@mui/material';
 import React from 'react';
-import todoManager from '../services/todoManager';
+import todoManager from '../../../services/todoManager';
 
 const SelectAllCheckBox = (context) => {
 	const { setState } = context;

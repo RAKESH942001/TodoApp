@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import React from 'react';
-import todoManager from '../services/todoManager';
+import todoManager from '../../../services/todoManager';
 import SelectAllCheckBox from './SelectAllCheckBox';
 import TodoInput from './TodoInput';
 

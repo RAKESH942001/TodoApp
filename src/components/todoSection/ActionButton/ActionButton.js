@@ -3,12 +3,12 @@ import { React } from 'react';
 import AddButton from './AddButton';
 import EditButton from './EditButton';
 
-const AddOrEditButton = (context) => {
+const ActionButton = (context) => {
 	const { state: { isEdit }} = context;
 
-	return 	isEdit
+	return isEdit
 		? <EditButton { ...context }/>
 		: <AddButton { ...context }/>;
 };
 
-export default AddOrEditButton;
+export default ActionButton;

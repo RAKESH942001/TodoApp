@@ -1,10 +1,6 @@
 import { React, useState } from 'react';
 import './App.scss';
-import AddOrEditButton from './components/AddOrEditButton';
-import ClearAllButton from './components/ClearAll';
-import InputData from './components/InputData';
-import TodoList from './components/TodoList';
-import FilterButtons from './components/FilterButtons';
+import TodoSection from './components/todoSection';
 
 const getInitialState = () => ({
 	todo: { name: '' },
@@ -18,11 +14,7 @@ const App = (context) => {
 	const extendedContext = { ...context, state, setState };
 
 	return <div className="App">
-		<InputData { ...extendedContext }/>
-		<AddOrEditButton { ...extendedContext }/>
-		<FilterButtons { ...extendedContext }/>
-		<TodoList { ...extendedContext }/>
-		<ClearAllButton { ...extendedContext }/>
+		<TodoSection { ...extendedContext }/>
 	</div>;
 };
 

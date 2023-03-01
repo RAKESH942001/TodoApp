@@ -12,7 +12,8 @@ const FilterButtons = (context) => {
 						...state,
 						filter: data,
 					})) }
-				>{data}</Button>
+				>{data}
+				</Button>
 			</Box>));
 };
 
