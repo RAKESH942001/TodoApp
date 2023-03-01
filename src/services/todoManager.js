@@ -29,7 +29,7 @@ const toggleEdit = (context) => {
 	return !isEdit;
 };
 
-const getCheckedOrNot = (context) => {
+const getToggleTodo = (context) => {
 	const { state: { todos }, data } = context;
 
 	return	todos.map((todoList) => (todoList.id === data.id
@@ -127,7 +127,7 @@ const todoManager = {
 	getCompletedTask,
 	getActiveList,
 	getSelectedTodo,
-	getCheckedOrNot,
+	getToggleTodo,
 	removeCompletedTask,
 	editFields,
 	removeData,
