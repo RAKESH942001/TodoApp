@@ -66,9 +66,42 @@ const getCompletedTask = (context) => {
 	return todos.filter((todo) => todo.checked === true);
 };
 
+const isCompleted = (context) => getCompletedTask(context).length !== 0;
+
+const isTodos = (context) =>	{
+	const { state: { todos }} = context;
+
+	return todos.length !== 0;
+};
+
+const getEditedTodoList = (context) => {
+	const { state } = context;
+
+	return {
+		...state,
+		todos: todoManager.editFields(context),
+		todo: { name: todoManager.resetInput() },
+		isEdit: todoManager.toggleEdit(context),
+	};
+};
+
+const getAddedTodoList = (context) => {
+	const { state } = context;
+
+	return {
+		...state,
+		todos: todoManager.addFields(context),
+		todo: { name: todoManager.resetInput() },
+	};
+};
+
 const todoManager = {
 	addFields,
+	getEditedTodoList,
+	getAddedTodoList,
+	isTodos,
 	getFilteredTask,
+	isCompleted,
 	getCompletedTask,
 	getActiveList,
 	getSelectedTodo,

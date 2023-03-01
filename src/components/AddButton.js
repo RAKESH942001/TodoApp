@@ -8,11 +8,8 @@ const AddButton = (context) => {
 	return <Box>
 		<Button
 			disabled={ !todoManager.isItemThere(context) }
-			onClick={ () => setState((state) => ({
-				...state,
-				todos: todoManager.addFields(context),
-				todo: { name: todoManager.resetInput() },
-			})) }
+			onClick={ () => setState(() =>
+				todoManager.getAddedTodoList(context)) }
 		>Add</Button></Box>;
 };
 
