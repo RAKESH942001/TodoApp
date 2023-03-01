@@ -1,6 +1,6 @@
 const config = {
 	idLength: 4,
-	filterData: ['all', 'active', 'completed'],
+	filters: ['all', 'active', 'completed'],
 };
 
 export default config;

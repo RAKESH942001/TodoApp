@@ -9,7 +9,7 @@ const EditButton = (context) => {
 		<Button
 			className="editButton"
 			onClick={ () => setState(() =>
-				todoManager.getEditedTodoList(context)) }
+				todoManager.editTodo(context)) }
 		>Edit</Button>
 	</Box>;
 };

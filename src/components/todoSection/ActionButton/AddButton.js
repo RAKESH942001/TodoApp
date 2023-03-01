@@ -10,7 +10,7 @@ const AddButton = (context) => {
 			<Button
 				disabled={ !todoManager.isItemThere(context) }
 				onClick={ () => setState(() =>
-					todoManager.getAddedTodoList(context)) }
+					todoManager.addTodo(context)) }
 			>Add
 			</Button>
 		</Box>

@@ -79,12 +79,12 @@ const onEnterKeyPress = (context) => {
 
 	return (
 		isEdit
-			? setState(() => todoManager.getEditedTodoList(context))
-			: setState(() => todoManager.getAddedTodoList(context))
+			? setState(() => todoManager.editTodo(context))
+			: setState(() => todoManager.addTodo(context))
 	);
 };
 
-const getEditedTodoList = (context) => {
+const editTodo = (context) => {
 	const { state } = context;
 
 	return {
@@ -95,7 +95,7 @@ const getEditedTodoList = (context) => {
 	};
 };
 
-const getAddedTodoList = (context) => {
+const addTodo = (context) => {
 	const { state } = context;
 
 	return {
@@ -117,8 +117,8 @@ const onEscKeyPress = (context) => {
 
 const todoManager = {
 	addFields,
-	getEditedTodoList,
-	getAddedTodoList,
+	editTodo,
+	addTodo,
 	isTodos,
 	onEnterKeyPress,
 	onEscKeyPress,
