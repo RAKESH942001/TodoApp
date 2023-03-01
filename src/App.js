@@ -2,15 +2,9 @@ import { React, useState } from 'react';
 import './App.scss';
 import TodoSection from './components/todoSection';
 
-const getInitialState = () => ({
-	todo: { name: '' },
-	todos: [],
-	filter: 'all',
-	isEdit: false,
-});
-
 const App = (context) => {
-	const [state, setState] = useState(getInitialState(context));
+	const { seed } = context;
+	const [state, setState] = useState(seed);
 	const extendedContext = { ...context, state, setState };
 
 	return <div className="App">
