@@ -37,7 +37,7 @@ const getCheckedOrNot = (context) => {
 		: todoList));
 };
 
-const removeClearedTask = (context) => {
+const removeCompletedTask = (context) => {
 	const { state: { todos }} = context;
 
 	return todos.filter((todoList) => todoList.checked === false);
@@ -49,7 +49,7 @@ const getSelectedTodo = (context) => {
 	return todos.map((todoList) => ({ ...todoList, checked: true }));
 };
 
-const getFilteredTask = {
+const getFilteredTodo = {
 	active: (context) => getActiveList(context),
 	all: ({ state: { todos }}) => todos,
 	completed: (context) => getCompletedTask(context),
@@ -122,13 +122,13 @@ const todoManager = {
 	isTodos,
 	onEnterKeyPress,
 	onEscKeyPress,
-	getFilteredTask,
+	getFilteredTodo,
 	isCompleted,
 	getCompletedTask,
 	getActiveList,
 	getSelectedTodo,
 	getCheckedOrNot,
-	removeClearedTask,
+	removeCompletedTask,
 	editFields,
 	removeData,
 	isItemThere,

@@ -4,11 +4,11 @@ import todoManager from '../../../services/todoManager';
 import SelectAllCheckBox from './SelectAllCheckBox';
 import TodoInput from './TodoInput';
 
-const InputData = (context) =>
+const TodoBoxes = (context) =>
 	<Box	className="inputData">
 		{todoManager.isTodos(context)
 				&& <SelectAllCheckBox { ...context }/>}
 		<TodoInput { ...context }/>
 	</Box>;
 
-export default InputData;
+export default TodoBoxes;

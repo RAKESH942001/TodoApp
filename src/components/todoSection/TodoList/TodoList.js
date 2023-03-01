@@ -7,7 +7,7 @@ import todoManager from '../../../services/todoManager';
 const TodoList = (context) => {
 	const { state: { filter, isEdit }, setState } = context;
 
-	return todoManager.getFilteredTask[filter](context).map((todo, key) =>
+	return todoManager.getFilteredTodo[filter](context).map((todo, key) =>
 		<Box
 			key={ key }
 			sx={ { display: 'flex',

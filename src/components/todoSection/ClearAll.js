@@ -11,7 +11,7 @@ const ClearAllButton = (context) => {
 		&& <Button
 			onClick={ () => setState((state) => ({
 				...state,
-				todos: todoManager.removeClearedTask(context),
+				todos: todoManager.removeCompletedTask(context),
 			})) }
 			variant="contained"
 			color="error"
