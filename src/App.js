@@ -1,6 +1,7 @@
 import { React, useState } from 'react';
 import './App.scss';
 import TodoSection from './components/todoSection';
+import TaskSection from './components/taskSection';
 
 const App = (context) => {
 	const { seed } = context;
@@ -9,6 +10,7 @@ const App = (context) => {
 
 	return <div className="App">
 		<TodoSection { ...extendedContext }/>
+		<TaskSection { ...extendedContext }/>
 	</div>;
 };
 

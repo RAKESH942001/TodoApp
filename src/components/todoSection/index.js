@@ -7,7 +7,7 @@ import TodoBoxes from './todoBoxes/TodoBoxes';
 import TodoList from './TodoList/TodoList';
 
 const TodoSection = (context) =>
-	<Box>
+	<Box className="todoSection">
 		<TodoBoxes { ...context }/>
 		<ActionButton { ...context }/>
 		<FilterButtons { ...context }/>

@@ -1,16 +1,21 @@
 .App {
 	text-align: center;
+	display: flex;
+	justify-content: center;
 
 	button {
 		font-weight: bold;
 	}
 }
 
-// .inputData {
-// 	position: absolute;
-// 	top: 10%;
-// 	left:75%;
-// }
-.deleteButton {
-	justify-content: space-between;
+.taskSection {
+	background-color: rgb(233, 240, 124);
+	width:50%;
+
 }
+
+.todoSection {
+	background-color: rgb(146, 232, 149);
+	width:50%;
+}
+
