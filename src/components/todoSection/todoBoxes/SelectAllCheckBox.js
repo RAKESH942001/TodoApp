@@ -12,7 +12,8 @@ const SelectAllCheckBox = (context) => {
 				todos: todoManager
 					.getSelectedTodo(context),
 			})) }
-		/>);
+		/>
+	);
 };
 
 export default SelectAllCheckBox;

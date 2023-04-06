@@ -1,4 +1,6 @@
-import { rndString } from '@laufire/utils/random';
+/* eslint-disable no-magic-numbers */
+import { peek } from '@laufire/utils/debug';
+import { rndString, rndValue } from '@laufire/utils/random';
 
 const addFields = (context) => {
 	const { config: { idLength },
@@ -8,12 +10,25 @@ const addFields = (context) => {
 		id: rndString(idLength), checked: false }];
 };
 
+const addTask = (context) => {
+	const { state: { tasks }, data } = context;
+
+	return tasks.filter((task) => task.id === data.id);
+};
+
 const editFields = (context) => {
 	const { state: { todo, todos }} = context;
 
 	return todos.map((task) => (task.id === todo.id ? todo : task));
 };
-const removeData = (context) => {
+
+const removeTask = (context) => {
+	const { state: { tasks }, data } = context;
+
+	return tasks.filter((task) => task.id !== data.id);
+};
+
+const removeTodo = (context) => {
 	const { state: { todos }, data } = context;
 
 	return todos.filter((task) => task.id !== data.id);
@@ -115,8 +130,22 @@ const onEscKeyPress = (context) => {
 	);
 };
 
+const autoGenTodo = (context) => {
+	const { setState } = context;
+	const { config: { tasksList, delayTime, genLimit }} = context;
+
+	return 	setInterval(() => setState((preState) => ({ ...preState,
+		tasks:	peek(preState.tasks.length < genLimit
+			?	[...preState.tasks,
+				{ name: rndValue(tasksList), id: rndString(4) }]
+			: preState.tasks) })), delayTime);
+};
+
 const todoManager = {
 	addFields,
+	removeTodo,
+	addTask,
+	autoGenTodo,
 	editTodo,
 	addTodo,
 	isTodos,
@@ -130,7 +159,7 @@ const todoManager = {
 	getToggleTodo,
 	removeCompletedTask,
 	editFields,
-	removeData,
+	removeTask,
 	isItemThere,
 	resetInput,
 	toggleEdit,

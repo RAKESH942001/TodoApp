@@ -8,6 +8,7 @@ import TodoList from './TodoList/TodoList';
 
 const TodoSection = (context) =>
 	<Box className="todoSection">
+		<Box className="todoHeader"><label>TODO</label></Box>
 		<TodoBoxes { ...context }/>
 		<ActionButton { ...context }/>
 		<FilterButtons { ...context }/>

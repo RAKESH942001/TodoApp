@@ -8,11 +8,7 @@ const TodoList = (context) => {
 	const { state: { filter, isEdit }, setState } = context;
 
 	return todoManager.getFilteredTodo[filter](context).map((todo, key) =>
-		<Box
-			key={ key }
-			sx={ { display: 'flex',
-				justifyContent: 'center' } }
-		>
+		<Box			key={ key }			className="todoList">
 			<CheckBox { ...{ ...context, data: todo } }/>
 			<Box
 				sx={ { flexBasis: '300px' } }

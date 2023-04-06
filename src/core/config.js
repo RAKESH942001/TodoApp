@@ -1,14 +1,10 @@
+
 const config = {
 	idLength: 4,
 	filters: ['all', 'active', 'completed'],
-	tasks: [
-		{ name: 'rakesh',
-			id: 'jlfbs' },
-		{ name: 'rakesh',
-			id: 'jlfbs' },
-		{ name: 'rakesh',
-			id: 'jlfbs' },
-	],
+	tasksList: ['rakesh', 'narmatha', 'vishali', 'vasa', 'china'],
+	delayTime: 1000,
+	genLimit: 6,
 };
 
 export default config;
