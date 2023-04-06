@@ -1,3 +1,4 @@
+import { DeleteRounded } from '@mui/icons-material';
 import { Box, Button } from '@mui/material';
 import React from 'react';
 import todoManager from '../../../services/todoManager';
@@ -10,13 +11,13 @@ const DeleteButton = (context) => {
 			className="deleteButton"
 			onClick={ () => setState((state) => ({
 				...state,
-				todos: todoManager.removeData(context),
+				todos: todoManager.removeTodo(context),
 			})) }
 			variant="contained"
 			color="error"
 			size="small"
 		>
-			X</Button></Box>;
+			<DeleteRounded/> </Button></Box>;
 };
 
 export default DeleteButton;
