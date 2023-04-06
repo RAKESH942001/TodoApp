@@ -1,24 +1,23 @@
 import { Box } from '@mui/material';
 import React from 'react';
-import AddButton from '../todoSection/ActionButton/AddButton';
-import DeleteButton from '../todoSection/TodoList/DeleteButton';
+import AddTask from './AddTask';
+import DeleteTask from './DeleteTask';
 
 const TaskSection = (context) => {
-	const { config: { tasks }} = context;
+	const { state: { tasks }} = context;
 
 	return (
 		<Box className="taskSection">
+			<label style={ {	marginBottom: '20px' } }>TASK</label>
 			{tasks.map((task, key) =>
 				<Box
 					key={ key }
-					sx={ { display: 'flex',
-						justifyContent: 'center' } }
-
+					className="task"
 				>
-					<AddButton { ...context }/>
+					<AddTask { ...{ ...context, data: task } }/>
 					<Box 	sx={ { flexBasis: '300px' } }>
 						{task.name}</Box>
-					<DeleteButton { ...context }/>
+					<DeleteTask { ...{ ...context, data: task } }/>
 
 				</Box>)}
 		</Box>);
